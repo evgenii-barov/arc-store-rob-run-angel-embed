@@ -1,6 +1,9 @@
 import {Composition, Folder} from "remotion";
 import {AnimatedObsBanner} from "./Composition";
-import {CompactObsBanner} from "./CompactComposition";
+import {MicroObsBanner} from "./MicroComposition";
+import {CartCtaScene} from "./micro/CartCtaScene";
+import {CashQuestionScene} from "./micro/CashQuestionScene";
+import {OfferScene} from "./micro/OfferScene";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -22,21 +25,47 @@ export const RemotionRoot: React.FC = () => {
         height={120}
       />
       <Composition
-        id="AngelCompact720x90"
-        component={CompactObsBanner}
-        durationInFrames={270}
+        id="AngelMicro360x90"
+        component={MicroObsBanner}
+        durationInFrames={165}
         fps={30}
-        width={720}
+        width={360}
         height={90}
       />
       <Composition
-        id="AngelCompact480x60"
-        component={CompactObsBanner}
-        durationInFrames={270}
+        id="AngelMicro240x60"
+        component={MicroObsBanner}
+        durationInFrames={165}
         fps={30}
-        width={480}
+        width={240}
         height={60}
       />
+      <Folder name="Micro-scenes">
+        <Composition
+          id="MicroCashQuestion"
+          component={CashQuestionScene}
+          durationInFrames={60}
+          fps={30}
+          width={360}
+          height={90}
+        />
+        <Composition
+          id="MicroOffer"
+          component={OfferScene}
+          durationInFrames={60}
+          fps={30}
+          width={360}
+          height={90}
+        />
+        <Composition
+          id="MicroCartCta"
+          component={CartCtaScene}
+          durationInFrames={60}
+          fps={30}
+          width={360}
+          height={90}
+        />
+      </Folder>
     </Folder>
   );
 };

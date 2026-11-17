@@ -2,7 +2,7 @@
 
 Remotion-проект генерирует четыре прозрачных WebM-файла:
 
-- `AngelCompact720x90` и `AngelCompact480x60` — компактные баннеры со сменой текста;
+- `AngelMicro360x90` и `AngelMicro240x60` — micro-баннеры с тремя сценами и усиленными переходами;
 - `AngelObs1920x180` и `AngelObs1280x120` — широкие баннеры.
 
 Запуск превью:
@@ -12,10 +12,10 @@ npm install
 npm run dev
 ```
 
-Экспорт компактного варианта:
+Экспорт рекомендуемого micro-варианта:
 
 ```bash
-npx remotion render AngelCompact720x90 out.webm --image-format=png --pixel-format=yuva420p --codec=vp9
+npx remotion render src/index.ts AngelMicro360x90 out.webm --image-format=png --pixel-format=yuva420p --codec=vp9
 ```
 
 Готовые файлы для OBS уже находятся в каталоге `../banners/`; устанавливать зависимости партнёру не требуется.
